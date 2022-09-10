@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list-post"></ul>
+    <script>
+        const postApi = 'https://jsonplaceholder.typicode.com/posts';
+        fetch(postApi)
+            .then(function(reponse){
+                return reponse.json();
+            })
+            .then(function(data){
+                var htmls = data.map(function(post){
+                    return `<li>
+                                <h2>${post.title}</h2>
+                            </li>
+                    `
+                })
+                var html = htmls.join('');
+                document.getElementById('list-post').innerHTML = html;
+            })
+    </script>
+</body>
+</html>

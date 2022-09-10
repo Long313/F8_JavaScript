@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+}
+
+body > div {
+    margin: 5% auto 0;
+    max-width: 720px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.tab-item {
+    padding: 8px 34px;
+    font-size: 20px;
+    color: #c23564;
+    opacity: 0.6;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 10px solid transparent;
+}
+.tab-item.active {
+    opacity: 1;
+}
+
+.tab-item:hover {
+    opacity: 1;
+    background-color: rgba(194, 53, 100, 0.05);
+    border-color: rgba(194, 53, 100, 0.1);
+}
+.line {
+    height: 10px;
+    background-color: #c23564;
+    position: absolute;
+    top: calc(100% - 10px);
+    left: 0;
+    border-radius: 2px;
+}
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}

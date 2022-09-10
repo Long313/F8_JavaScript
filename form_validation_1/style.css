@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: rgb(238, 233, 233);
+}
+
+.main {
+    width: 300px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 5px rgba(0,0,0, 0.1);
+}
+
+.heading {
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 2.2rem;
+}
+.decs {
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: rgb(145, 139, 139);
+}
+.form-group {
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+.form-group.invalid input {
+    border: 2px solid rgb(207, 61, 73);
+    outline: none;
+}
+
+.form-group.invalid .form-message {
+    color: rgb(207, 61, 73);
+    font-size: 1rem;
+}
+.form-group .form-label {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.form-group input {
+    display: inline-block;
+    width: 100%;
+    padding: 4px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+
+.form-group input:focus {
+    border: 2px solid rgb(70, 172, 162);
+    outline: none;
+}
+
+.form-group .form-message {
+ font-size: 1.2rem;
+ display: block;
+ margin-top: 4px;
+}
+
+.form-submit {
+    width: 100%;
+    color: #fff;
+    background-color: rgb(70, 172, 162);
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}

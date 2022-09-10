@@ -1,0 +1,9 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Khoa hoc co ban tong quan cho nguoi moi bat dau",
+      "description": "Kien thuc co ban danh cho nguoi moi, khong phan biet Front-end, Back-end hay DevOps"
+    }
+  ]
+}

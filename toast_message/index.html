@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="toast"></div>
+    <div>
+      <div onclick="showSuccessToast()" class="btn btn--success">Show success toast</div>
+      <div onclick="showErrorToast()" class="btn btn--danger">Show error toast</div>
+    </div>
+    <!-- <div> -->
+      <!-- Infor -->
+      <!-- <div class="toast toast--infor">
+        <div class="toast__icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">Infor</h3>
+          <p class="toast__msg">Máy vi tính kết nối Window, Ubuntu, MacOS</p>
+        </div>
+        <div class="toast__close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div> -->
+      <!-- Warning -->
+      <!-- <div class="toast toast--warning">
+        <div class="toast__icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">Warning</h3>
+          <p class="toast__msg">Máy vi tính kết nối Window, Ubuntu, MacOS</p>
+        </div>
+        <div class="toast__close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div> -->
+      <!-- Error -->
+      <!-- <div class="toast toast--error">
+        <div class="toast__icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="toast__body">
+          <h3 class="toast__title">Error</h3>
+          <p class="toast__msg">Máy vi tính kết nối Window, Ubuntu, MacOS</p>
+        </div>
+        <div class="toast__close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+    </div> -->
+    <script >
+      function toast({
+        title= '',
+        message= '', 
+        type= 'infor',
+        duration= 1}) {
+          const main = document.getElementById('toast');
+          if(main) {
+            const toast = document.createElement('div');
+            // Auto remove toast 
+            main.appendChild(toast);
+            const autoRemoveId =setTimeout(function(){
+              main.removeChild(toast);
+            },duration + 1000);
+            // Remove toast khi click nút close
+            toast.onclick = function(e) {
+              if(e.target.closest('.toast__close')){
+                main.removeChild(toast);
+                clearTimeout(autoRemoveId);
+              };
+            }
+            const icons = {
+              success: 'fa-solid fa-circle-check',
+              infor: 'fa-solid fa-circle-info',
+              warning: 'fa-solid fa-exclamation',
+              error: 'fa-solid fa-triangle-exclamation'
+            }
+            const icon = icons[type];
+            const delay = (duration/1000).toFixed(2);
+            toast.classList.add('toast', `toast--${type}`);
+            toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+            toast.innerHTML = `
+              <div class="toast__icon">
+                <i class='${icon}'></i>
+              </div>
+              <div class="toast__body">
+                <h3 class="toast__title">${title}</h3>
+                <p class="toast__msg">${message}</p>
+              </div>
+              <div class="toast__close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            `
+          }
+      }
+      function showSuccessToast() {
+        toast({
+        title: 'Thành công',
+        message: 'Bạn đã đăng ký thành công tài khoản',
+        type: 'success',
+        duration: 5000
+        })
+      }
+      function showErrorToast() {
+        toast({
+        title: 'Thất bại',
+        message: 'Bạn đã đăng ký thất bại. Vui lòng liên hệ quản trị viên',
+        type: 'error',
+        duration: 5000
+        })
+      }
+    </script>
+  </body>
+</html>

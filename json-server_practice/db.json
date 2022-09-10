@@ -1,0 +1,9 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "name": "Khoa hoc HTML, CSS cho nguoi moi bat dau",
+      "description": "Khoa hoc co ban. Khong phan biet Front-end, Back-end, DevOps"
+    }
+  ]
+}
